@@ -1,5 +1,5 @@
 {
-  "name": "maven-pom-tools",
+  "name": "maven-pom-toolz",
   "displayName": "Maven POM Tools",
   "description": "Provides useful tools for editing Maven pom.xml files",
   "version": "0.0.2",
