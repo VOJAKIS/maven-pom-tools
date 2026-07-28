@@ -1,6 +1,6 @@
 # Maven POM tools
 
-Toolbox for Maven configuration file – pom.xml
+Toolbox for Maven configuration file `pom.xml`
 
 ## ✨ Features
 
@@ -10,10 +10,10 @@ Use the lightbulb, or `Ctrl + .` when you are inside a dependency tag `<dependen
 
 ### 🔎 Extract version to properties tag
 #### No properties tag
-![example-no-properties-tag](docs/images/example-no-properties-tag.compressed.gif)
+![example-no-properties-tag](docs/images/example-no-properties-tag.compressed-colors64.gif)
  
 #### Properties tag exists, no equal property name
-![example-properties-tag-no-property](docs/images/example-properties-tag-no-property.compressed.gif)
+![example-properties-tag-no-property](docs/images/example-properties-tag-no-property.compressed-colors64.gif)
 
 ## 📋 Requirements
 

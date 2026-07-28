@@ -2,7 +2,7 @@
   "name": "maven-pom-tools",
   "displayName": "Maven POM Tools",
   "description": "Provides useful tools for editing Maven pom.xml files",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "publisher": "avalastan",
   "repository": {
     "type": "git",
@@ -34,7 +34,8 @@
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src",
-    "test": "vscode-test"
+    "test": "vscode-test",
+    "package": "vsce package"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.10",
