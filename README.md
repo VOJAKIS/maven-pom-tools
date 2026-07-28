@@ -1,12 +1,11 @@
-# Maven POM tools
+# POM tools
 
 Toolbox for Maven configuration file `pom.xml`
 
 ## ✨ Features
 
-This extension allows the user to quickly extract dependency version to properties tag `<properties>...</properties>` in `pom.xml` file, or it's derivatives `pom.somethinsomethin.xml`.
-
-Use the lightbulb, or `Ctrl + .` when you are inside a dependency tag `<dependency>...</dependency>`.
+- Extract dependency version to properties tag `<properties>...</properties>` in `pom.xml` file.
+- Use the lightbulb 💡, or `Ctrl + .` when you are inside a dependency tag `<dependency>...</dependency>`.
 
 ### 🔎 Extract version to properties tag
 #### No properties tag

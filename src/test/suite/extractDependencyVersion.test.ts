@@ -4,7 +4,7 @@ import * as sinon from 'sinon';
 import { appendToExistingPropertiesBlock, noPropertiesBlock, MyTest, versionPropertyExistsUserChangeToExistingProperty, versionPropertyExistsUserEntersNewName } from './testFiles';
 import { EXTRACT_DEPENDENCY_VERSION } from '../../commands';
 
-suite('Extract Maven Version Command Test Suite', () => {
+suite('Extract Dependency Version Command Test Suite', () => {
 	let sandbox: sinon.SinonSandbox;
 
 	// Runs before each test

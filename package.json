@@ -1,6 +1,6 @@
 {
-  "name": "maven-pom-tools",
-  "displayName": "Maven POM Tools",
+  "name": "pom-tools",
+  "displayName": "POM Tools",
   "description": "Provides useful tools for editing Maven pom.xml files",
   "version": "0.0.1",
   "publisher": "avalastan",
