@@ -2,7 +2,8 @@
   "name": "pom-tools",
   "displayName": "POM Tools",
   "description": "Provides useful tools for editing Maven pom.xml files",
-  "version": "0.0.1",
+  "icon": "docs/images/icon/icon.png",
+  "version": "0.0.2",
   "publisher": "avalastan",
   "repository": {
     "type": "git",

@@ -11,3 +11,9 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ### Added
 
 - Dependency version extraction
+
+## [0.0.2] - 2026-07-28
+
+### Added
+
+- Extension icon
