@@ -1,0 +1,14 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+	<properties>
+		<java.version>17</java.version>
+		<spring-retry.version>1.95.0</spring-retry.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.retry</groupId>
+			<artifactId>spring-retry</artifactId>
+			<version>211</version>
+		</dependency>
+	</dependencies>
+</project>

@@ -1,0 +1,91 @@
+@startuml Extract Version to Properties
+
+skinparam style strictuml
+skinparam activity {
+  BackgroundColor White
+  BorderColor #2b78e4
+  ArrowColor #2b78e4
+}
+
+!$hide_code_action = 'Hide Code Action / Show Warning'
+
+start
+:User places cursor inside tag <dependency>;
+
+if (Contains tag <version>?) then (Yes)
+  if (Trimmed version value starts with "${"?) then(Yes, already a variable)
+    :$hide_code_action;
+    end
+	else (No)
+	endif
+
+  :Extract value from tag <version>;
+	note right: <version>2.0.13</version>\n-> 2.0.13
+	
+  :Derive property name from tag <artifactId>;
+	note right: <artifactId>spring-retry</artifactId>\n-> spring-retry
+  
+  if (Tag <properties> exists in pom.xml?) then (No)
+    :Create tag <properties> and place it above tag <dependencies>;
+    :Insert new tag at the end of <properties> with value as a version;
+		note right: <spring-retry.version>2.0.13</spring-retry.version>
+    :Change value in <version> tag to ${propertyName};
+		note right
+			<version>2.0.13</version>
+			-> <version>${spring-retry.version}</version>
+		end note
+		stop
+	else (Yes)
+  endif
+
+	:Create a new property name;
+	note right: spring-retry -> spring-retry.version
+  
+  if (Property with this name already exists?) then (Yes)
+    :Show dialog to user;
+		note right
+			Property "spring-retry.version" already exists:
+			properties version: 1.95.0
+			dependency version: 2.0.13
+		end note
+    
+    if (Dealer's choice?) then (Change to existing property)
+      :Keep existing property in <properties>;
+    else (Enter a new name (with old one inputted))
+      :User inputs a new property name,\nwith cursor before .version;
+			note right: spring-retry-me.version
+      :Insert new tag at the end of <properties>;
+			note right
+			<properties>
+				<some-other-dependency.version>1.2230</some-other-dependency.version>
+				<some-other-dependency.version>v3.0.1</some-other-dependency.version>
+				...
+				<spring-retry-me.version>2.0.13</spring-retry-me.version>
+			</properties>
+			end note
+
+		  :Change value in <version> tag to ${propertyName};
+			note right
+				<version>2.0.13</version>
+				-> <version>${spring-retry.version}</version>
+			end note
+			stop
+    endif
+	else (No)
+	
+    :Insert new tag at the end of <properties> with value as a version;
+		note right: <spring-retry.version>2.0.13</spring-retry.version>
+	endif
+
+  :Change value in <version> tag to ${propertyName};
+	note right
+		<version>2.0.13</version>
+		-> <version>${spring-retry.version}</version>
+	end note
+else (No)
+  :$hide_code_action;
+  end
+endif
+
+stop
+@enduml

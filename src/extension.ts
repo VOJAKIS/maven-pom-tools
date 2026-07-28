@@ -1,26 +1,33 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
+import { DependencyVersionCodeActionProvider } from './DependencyVersionCodeActionProvider';
+import { extractDependencyVersionCommand } from './extractDependencyVersionCommand';
+import { EXTRACT_DEPENDENCY_VERSION } from './commands';
 
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
+	// 1. Register the Lightbulb (Code Action)
+	const codeAction = vscode.languages.registerCodeActionsProvider(
+		{
+			language: 'xml',
+			scheme: 'file',
+			pattern: '**/*pom*.xml*'
+		},
+		new DependencyVersionCodeActionProvider(),
+		{
+			providedCodeActionKinds: [
+				vscode.CodeActionKind.RefactorExtract
+			]
+		}
+	);
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "maven-pom-tools" is now active!');
+	// 2. Register the Command that does the actual work
+	const command = vscode.commands.registerCommand(EXTRACT_DEPENDENCY_VERSION.command, extractDependencyVersionCommand);
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	const disposable = vscode.commands.registerCommand('maven-pom-tools.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from maven-pom-tools!');
-	});
-
-	context.subscriptions.push(disposable);
+	context.subscriptions.push(codeAction, command);
 }
 
 // This method is called when your extension is deactivated
-export function deactivate() {}
+export function deactivate() {
+	/**
+	 * This method is empty.
+	*/
+}
