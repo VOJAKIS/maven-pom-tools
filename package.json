@@ -4,7 +4,10 @@
   "description": "Provides useful tools for editing Maven pom.xml files",
   "version": "0.0.1",
   "publisher": "avalastan",
-  "repository": "https://github.com/VOJAKIS/maven-pom-tools",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VOJAKIS/maven-pom-tools.git"
+  },
   "engines": {
     "vscode": "^1.125.0"
   },

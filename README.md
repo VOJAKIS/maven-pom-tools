@@ -11,7 +11,7 @@ Use the lightbulb, or `Ctrl + .` when you are inside a dependency tag `<dependen
 ### 🔎 Extract version to properties tag
 #### No properties tag
 ![example-no-properties-tag](./docs/images/example-no-properties-tag.gif)
-
+ 
 #### Properties tag exists, no equal property name
 ![example-properties-tag-no-property](./docs/images/example-properties-tag-no-property.gif)
 
