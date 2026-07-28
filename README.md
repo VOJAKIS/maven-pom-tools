@@ -1,4 +1,4 @@
-# Maven POM toolz
+# Maven POM tools
 
 Toolbox for Maven configuration file – pom.xml
 
